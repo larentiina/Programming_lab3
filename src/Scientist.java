@@ -1,20 +1,36 @@
-public class Scientist extends Questioner{
-    private String name;
-    private Question question;
-    Scientist(String name,Question question){
+import java.util.Objects;
 
-        this.name=name;
-        this.question=question;
+public class Scientist extends Questioner{
+
+    Scientist(String name,Question question){
+        super(name,question);
     }
 
     @Override
     public void ask(Question question) {
-        System.out.println("Учёный" + this.name+ " Задаёт вопрос:" + " " +question.getAct().str() +" "+ question.getQuestionsubject() + "?");
+        super.ask(question);
     }
 
     @Override
     public String toString() {
         return "учёный по имени" + this.name;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj ==this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Scientist s = (Scientist) obj;
+        return this.name.equals(s.name) && this.question.equals(s.question) || (this.name != null && this.name.equals(s.name) && this.question.equals(s.question)) || (this.question!= null && this.name.equals(s.name) && this.question.equals(s.question) );
+
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, question);
     }
 }
 

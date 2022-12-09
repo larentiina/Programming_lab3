@@ -2,26 +2,26 @@ public enum Actions {
     EAT{
         @Override
         public String str(){
-            return "What eat";
+            return "eat";
         }
     },
     DRINK{
         @Override
         public String str(){
-            return "What drink";
+            return "drink";
         }
 
     },
     SEE{
         @Override
         public String str() {
-            return "What see";
+            return "see";
         }
     },
     LOOK {
         @Override
         public String str() {
-            return "How look";
+            return "look";
         }
     },
     THINK {
@@ -33,13 +33,13 @@ public enum Actions {
     FEEL {
         @Override
         public String str() {
-            return "What feel";
+            return "feel";
         }
     },
     DO {
         @Override
         public String str() {
-            return "What do";
+            return "do";
         }
     },
     UNDERSTAND {
