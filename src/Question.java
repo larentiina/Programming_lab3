@@ -2,29 +2,50 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Question {
-    private String questionsubject;
+    private String questionSubject;
     private Actions act;
-    private ArrayList<String> fuatures;
-    Question(String questionsubject, Actions act){
-        this.questionsubject=questionsubject;
+    private ArrayList<String> features;
+    private boolean isAsked;
+    private boolean isAnswered;
+
+
+    Question(String questionSubject, Actions act){
+        this.questionSubject=questionSubject;
         this.act=act;
-        this.fuatures=new ArrayList<String>();
-          }
+        this.features=new ArrayList<String>();
+    }
 
     public Actions getAct() {
         return act;
     }
 
-    public void setFuatures(String s) {
-        this.fuatures.add(s);
+    public void setFeatures(String s) {
+        this.features.add(s);
     }
 
-    public ArrayList<String> getFuatures() {
-        return fuatures;
+    public ArrayList<String> getFeatures() {
+        return features;
     }
 
     public String getQuestionsubject() {
-        return questionsubject;
+        return questionSubject;
     }
+
+    public boolean isAsked() {
+        return isAsked;
+    }
+
+    public void setAsked(boolean ask) {
+        isAsked = ask;
+    }
+
+    public boolean isAnswered() {
+        return isAnswered;
+    }
+
+    public void setAnswered(boolean answer) {
+        isAnswered = answer;
+    }
+
 
 }

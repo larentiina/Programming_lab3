@@ -1,3 +1,3 @@
 public interface Asking {
-    public void ask(Question question);
+    void ask(Question question);
 }

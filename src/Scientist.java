@@ -1,14 +1,17 @@
 import java.util.Objects;
 
 public class Scientist extends Questioner{
+    private boolean satisfaction=false;
 
     Scientist(String name,Question question){
         super(name,question);
+        question.setAsked(true);
     }
 
     @Override
     public void ask(Question question) {
         super.ask(question);
+
     }
 
     @Override
@@ -31,6 +34,9 @@ public class Scientist extends Questioner{
     @Override
     public int hashCode() {
         return Objects.hash(name, question);
+    }
+    public void makeSatisfaction(){
+        super.makeSatisfaction();
     }
 }
 

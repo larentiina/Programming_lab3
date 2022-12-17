@@ -1,8 +1,8 @@
 import java.util.Objects;
 
 public class Narrator implements Talking {
+
     private String name;
-    private Question question;
     Narrator(String name){
         this.name=name;
     }
@@ -16,19 +16,11 @@ public class Narrator implements Talking {
 
     @Override
     public void answer(Question q) {
-        if (q.getFuatures().isEmpty()){
-        System.out.println(this.name + " отвечает на вопрос про: " + q.getQuestionsubject());}
-        else
-        {
-            System.out.print(this.name + " отвечает на вопрос про: " + q.getQuestionsubject());
-            System.out.print(": ");
-            for(String s : q.getFuatures()) {
-                System.out.print(s+" ");
-            }
-            System.out.println();
-        }
-
+        q.setAnswered(true);
+        System.out.println(this.name + " отвечает на вопрос про: " + q.getQuestionsubject());
     }
+
+
 
     @Override
     public String toString() {
@@ -43,12 +35,12 @@ public class Narrator implements Talking {
             return false;
         }
         Narrator n = (Narrator) obj;
-        return this.name.equals(n.name) && this.question.equals(n.question) || (this.name != null && this.name.equals(n.name) && this.question.equals(n.question)) || (this.question!= null && this.name.equals(n.name) && this.question.equals(n.question) );
+        return this.name.equals(n.name);
 
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, question);
+        return Objects.hash(name);
     }
 }

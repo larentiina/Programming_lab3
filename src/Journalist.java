@@ -1,18 +1,15 @@
 import java.util.Objects;
 
 public class Journalist extends Questioner {
-
+    private boolean satisfaction=false;
     Journalist(String name,Question question){
-        super(name,question);}
+        super(name,question);
+    }
 
     @Override
     public void ask(Question question) {
         super.ask(question);
-
     }
-
-
-
     @Override
     public String toString() {
         return "журналист по имени" + this.name;
@@ -35,5 +32,10 @@ public class Journalist extends Questioner {
     public int hashCode() {
         return Objects.hash(name, question);
     }
+
+    public void makeSatisfaction(){
+        super.makeSatisfaction();
+    }
+
 }
 
